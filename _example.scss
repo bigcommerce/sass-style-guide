@@ -1,0 +1,47 @@
+// =============================================================================
+// FILE TITLE
+// =============================================================================
+
+
+// Comment Block
+// -----------------------------------------------------------------------------
+//
+// Purpose: This will describe when this component should be used. This comment
+// block is 80 chars long
+//
+// -----------------------------------------------------------------------------
+
+
+.component {
+    @extend %component;
+    color: #aaa;
+    left: 0;
+    line-height: 1.25;
+    min-height: 40rem;
+    padding: 0 2rem;
+    top: 0;
+}
+
+.component-child {
+    margin: 0;
+}
+
+.component-childSecond {
+    padding-left: 2rem;
+}
+
+
+// Component Sub-Section (Purpose: Describes why this section exists)
+// -----------------------------------------------------------------------------
+
+.componentPart {
+    color: #333;
+}
+
+.componentPart--modifier {
+    border: 0;
+}
+
+.componentPart-child {
+    color: #fff;
+}
