@@ -37,6 +37,7 @@ classes.
 * [Variables and Mixins](#variables-and-mixins)
   * [Variables](#variables)
   * [Componenet / Micro app variables](#component-variables)
+  * [Maps](#variable-maps)
   * [colors](#colors)
   * [z-index](#zindex)
   * [font-weight](#fontweight)
@@ -802,8 +803,8 @@ $componentName-decendantName--active-backgroundColor:   #000;
 }
 ```
 
-
-**Maps, maps are cool**
+<a name="variable-maps"></a>
+####Maps, maps are cool
 
 Variable maps with a simple getter mixin, can help simplify your variable names
 when calling them, and help better group variables together using their
