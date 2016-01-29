@@ -23,6 +23,7 @@ classes.
   * [Quotes](#quotes)
   * [Value Declaration](#value-declaration)
   * [Declaration Order](#declaration-order)
+* [Pseudo Elements and Classes](#pseudo)
 * [Units](#units)
 * [Nesting](#nesting)
 * [@extend or @inlcude](#extendorinclude)
@@ -360,6 +361,40 @@ does. Just use the alphabet, _everyone_ knows it.
     line-height: 1.25;
     width: 200px;
     padding: 0 20px;
+}
+```
+
+<a name="pseudo"></a>
+##Pseudo Elements and Classes
+Pseudo elements and classes are very different things, as is the syntax used to
+declare them. Declare pseudo _**classes**_ with a single colon. Declare pseudo
+_**elements**_ with a double colon.
+
+> **Do**
+
+```css
+.component:focus {
+    ...
+}
+
+.component:hover {
+    ...
+}
+
+.component::before {
+    ...
+}
+
+.component::after {
+    ...
+}
+```
+
+> **Don't**
+
+```css
+.component:after {
+    ...
 }
 ```
 
