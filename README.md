@@ -400,7 +400,7 @@ _**elements**_ with a double colon.
 ```
 
 
-<a name="#units"></a>
+<a name="units"></a>
 ##Units
 
 > **Do:**
@@ -425,7 +425,7 @@ reasoning with comments so that others are aware of its purpose.
 
 
 
-<a name="#nesting"></a>
+<a name="nesting"></a>
 ##Nesting
 
 Nesting is handy, _sometimes_, but will quickly conflict with our
