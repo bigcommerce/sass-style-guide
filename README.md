@@ -23,6 +23,7 @@ classes.
   * [Quotes](#quotes)
   * [Value Declaration](#value-declaration)
   * [Declaration Order](#declaration-order)
+* [Pseudo Elements and Classes](#pseudo)
 * [Units](#units)
 * [Nesting](#nesting)
 * [@extend or @inlcude](#extendorinclude)
@@ -36,6 +37,7 @@ classes.
 * [Variables and Mixins](#variables-and-mixins)
   * [Variables](#variables)
   * [Componenet / Micro app variables](#component-variables)
+  * [Maps](#variable-maps)
   * [colors](#colors)
   * [z-index](#zindex)
   * [font-weight](#fontweight)
@@ -363,8 +365,42 @@ does. Just use the alphabet, _everyone_ knows it.
 }
 ```
 
+<a name="pseudo"></a>
+##Pseudo Elements and Classes
+Pseudo elements and classes are very different things, as is the syntax used to
+declare them. Declare pseudo _**classes**_ with a single colon. Declare pseudo
+_**elements**_ with a double colon.
 
-<a name="#units"></a>
+> **Do**
+
+```css
+.component:focus {
+    ...
+}
+
+.component:hover {
+    ...
+}
+
+.component::before {
+    ...
+}
+
+.component::after {
+    ...
+}
+```
+
+> **Don't**
+
+```css
+.component:after {
+    ...
+}
+```
+
+
+<a name="units"></a>
 ##Units
 
 > **Do:**
@@ -389,7 +425,7 @@ reasoning with comments so that others are aware of its purpose.
 
 
 
-<a name="#nesting"></a>
+<a name="nesting"></a>
 ##Nesting
 
 Nesting is handy, _sometimes_, but will quickly conflict with our
@@ -767,8 +803,8 @@ $componentName-decendantName--active-backgroundColor:   #000;
 }
 ```
 
-
-**Maps, maps are cool**
+<a name="variable-maps"></a>
+####Maps, maps are cool
 
 Variable maps with a simple getter mixin, can help simplify your variable names
 when calling them, and help better group variables together using their
