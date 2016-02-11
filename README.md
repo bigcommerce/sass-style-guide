@@ -1,6 +1,6 @@
-# SASS Coding Guidelines
+# Sass Coding Guidelines
 
-Bigcommerce uses [SASS](http://sass-lang.com/) for style generation.
+Bigcommerce uses [Sass](http://sass-lang.com/) for style generation.
 
 Bigcommerce's naming conventions are heavily influenced by the SUIT CSS framework
 and align closely to [Medium](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)'s
@@ -997,12 +997,12 @@ you should probably be adding the `js-` prefix. In practice this looks like this
 ##Folder Structure
 
 ####General principle
-The SASS folder structure we're proposing, will have two slight differences
+The Sass folder structure we're proposing, will have two slight differences
 between the core framework and micro apps, however the bulk of the structure is
 identical between the two.
 
 The idea is to have the least amount of folders as possible, but as many as we
-need to define clear, structured patterns in your SASS.
+need to define clear, structured patterns in your Sass.
 
 ####Core Folder Structure
 
@@ -1023,7 +1023,7 @@ files that have been broken into logical files such as `_colors.scss`,
 `_typography.scss`, `_z-index.scss` and your chosen frameworks variables, for
 example `_foundation.scss`.
 
-**/tools:** Contains all of your SASS mixins. Within this folder is 1 primary
+**/tools:** Contains all of your Sass mixins. Within this folder is 1 primary
 file `_tools.scss`, which imports all other mixin files that have been broken into
 logical files. No framework mixins should appear in this folder as they can be
 consumed from their own respective `/vendor` or `/components` folder.
