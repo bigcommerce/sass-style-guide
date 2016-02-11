@@ -10,7 +10,6 @@ helps to work around the current limits of applying CSS to the DOM (i.e., the
 lack of style encapsulation), and to better communicate the relationships between
 classes.
 
-
 **Table of contents**
 
 * [General Principles](#principles)
@@ -48,10 +47,9 @@ classes.
 * [JavaScript](#javascript)
 * [Folder Structure](#folders)
 
-
-
 <a name="principles"></a>
 ## General Principles
+
 Strictly adhere to the agreed-upon style guide listed below. The general
 principle is to develop DRY (Don't Repeat Yourself) SCSS, built around reusable
 components and patterns.
@@ -63,40 +61,36 @@ components and patterns.
 * Save your complex components as patterns so they can be easily reused.
 * Build your component as a mixin which outputs _optional_ css.
 
-
 <a name="specificity"></a>
 ## Specificity
 
 On large code bases, it's preferable and a tonne more maintainable if the
 specificity of selectors are all as equal and as low as humanly possible.
 
-
 > **Do:**
 > Use classes in your SCSS for styling.
 
 ```css
 .component {
-    ...
+    /* … */
 }
 ```
-
 
 > **Don't:**
 > Use ID's for styling. There is literally no point in using them.
 
 ```css
 #component {
-    ...
+    /* … */
 }
 ```
-
 
 > **Do:**
 > Style the base elements (such as typography elements).
 
 ```css
 h1 {
-    ...
+    /* … */
 }
 ```
 
@@ -105,22 +99,22 @@ h1 {
 
 ```css
 .component h1 {
-    ...
+    /* … */
 }
 ```
-
 
 > **Don't:**
 > Use overqualified selectors in your CSS. Do not prepend a class or ID with an element.
 
 ```css
 div.container {
-    ...
+    /* … */
 }
 ```
 
 <a name="performance"></a>
-#### Performance
+### Performance
+
 Overly specific selectors can also cause performance issues. Consider:
 
 ```css
@@ -132,7 +126,7 @@ ul.user-list li span a:hover {
 Selectors are resolved right to left, exiting when it has been detected the
 selector does not match. This requires a lot of DOM walking and for large
 documents can cause a significant increase in the layout time. For further
-reading checkout: https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors
+reading checkout [this article from Google](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors).
 
 If we know we want to give all `a` elements inside the `.user-list` red on
 hover we can simplify this style to:
@@ -142,7 +136,6 @@ hover we can simplify this style to:
     color: red;
 }
 ```
-
 
 <a name="formatting"></a>
 ## Formatting
@@ -154,7 +147,7 @@ The following are some high level page formatting style rules.
 * Leave one clear line at the bottom of your file.
 
 <a name="indentation"></a>
-####Indentation
+### Indentation
 
 * Don't mix spaces with tabs for indentation.
 * Use a soft-tab of 4 spaces.
@@ -165,20 +158,21 @@ The following are some high level page formatting style rules.
 
 ```css
 .component {
-    ...
+    /* … */
 }
 
 .component-child {
-    ...
+    /* … */
 }
 
 .component-childSecond {
-    ...
+    /* … */
 }
 ```
 
 <a name="commenting"></a>
-####Commenting
+### Commenting
+
 * Separate your code into logical sections using standard comment blocks.
 * Leave one clear line under your section comments.
 * Leave two clear lines above comment blocks.
@@ -188,7 +182,7 @@ The following are some high level page formatting style rules.
 > Comment your code
 > No really, comment your code
 
-```css
+```scss
 // =============================================================================
 // FILE TITLE / SECTION TITLE
 // =============================================================================
@@ -206,13 +200,12 @@ The following are some high level page formatting style rules.
 // -----------------------------------------------------------------------------
 
 .component {
-    ... // 1
+    /* … */ // 1
 }
-
 ```
 
 <a name="spacing"></a>
-#### Spacing
+### Spacing
 
 * CSS rules should be comma separated but live on new lines.
 * Include a single space before the opening brace of a rule-set.
@@ -258,7 +251,7 @@ The following are some high level page formatting style rules.
 ```
 
 <a name="quotes"></a>
-#### Quotes
+### Quotes
 
 > **Do:**
 > Always use double quotes when available.
@@ -281,7 +274,8 @@ input[type=checkbox] {
 ```
 
 <a name="value-declaration"></a>
-####When declaring values
+### When declaring values
+
 * Use lower-case and shorthand hex values
 * Use unit-less line-height values
 * Where allowed, avoid specifying units for zero values
@@ -322,17 +316,18 @@ over zealously resetting something you might want to inherit
 }
 ```
 
-
 <a name="declaration-order"></a>
-####Declaration order
+### Declaration order
+
 There are a millions opinions and thoughts on logical ordering and grouping.
 Don't force someone to learn your opinion, ordering doesn't matter, consistency
 does. Just use the alphabet, _everyone_ knows it.
-* @extend
-* @include
-* Alphabetical, always.
 
-> **Do**
+  1. @extend
+  1. @include
+  1. Alphabetical, always.
+
+> **Do:**
 
 ```css
 .component {
@@ -366,12 +361,13 @@ does. Just use the alphabet, _everyone_ knows it.
 ```
 
 <a name="pseudo"></a>
-##Pseudo Elements and Classes
+## Pseudo Elements and Classes
+
 Pseudo elements and classes are very different things, as is the syntax used to
 declare them. Declare pseudo _**classes**_ with a single colon. Declare pseudo
 _**elements**_ with a double colon.
 
-> **Do**
+> **Do:**
 
 ```css
 .component:focus {
@@ -391,7 +387,7 @@ _**elements**_ with a double colon.
 }
 ```
 
-> **Don't**
+> **Don't:**
 
 ```css
 .component:after {
@@ -399,9 +395,8 @@ _**elements**_ with a double colon.
 }
 ```
 
-
 <a name="units"></a>
-##Units
+## Units
 
 > **Do:**
 
@@ -423,10 +418,8 @@ reasoning with comments so that others are aware of its purpose.
 
 * Avoid all use of magic numbers. Re-think the problem. (`margin-top: 37px;`)
 
-
-
 <a name="nesting"></a>
-##Nesting
+## Nesting
 
 Nesting is handy, _sometimes_, but will quickly conflict with our
 [Specificty](#specificity) and [Performance](#performance) guidelines.
@@ -466,6 +459,7 @@ are neat, but not very searchable
 ```
 
 At its worst, this produces:
+
 ```css
 .panel-sideBar-item-label.has-smallFont {
     font-size: 13px;
@@ -503,6 +497,7 @@ At its worst, this produces:
 ```
 
 At it's worst, this produces:
+
 ```css
 .bc-tab-panel .panel-body .panel-side-bar .panel-side-item .panel-side-item-label.small-font {
     font-size: 13px;
@@ -567,10 +562,8 @@ The primary architectural division is between components and utilities:
 * u-utilityName (eg. `.u-textTruncate`)
 * `[<namespace>-]<componentName>[--modifierName|-descendentName]`
 
-
-
 <a name="componentName"></a>
-#### ComponentName
+### ComponentName
 
 The component's name must be written in camel case. Use class names that are as
 short as possible but as long as necessary.
@@ -589,7 +582,7 @@ short as possible but as long as necessary.
 ```
 
 <a name="componentName--modifierName"></a>
-#### componentName--modifierName
+### componentName--modifierName
 
 A component modifier is a class that modifies the presentation of the base
 component in some form. Modifier names must be written in camel case and be
@@ -610,8 +603,9 @@ in the HTML _in addition_ to the base component class.
 ```html
 <button class="button button--primary">...</button>
 ```
+
 <a name="componentName-descendantName"></a>
-#### componentName-descendantName
+### componentName-descendantName
 
 A component descendant is a class that is attached to a descendant node of a
 component. It's responsible for applying presentation directly to the descendant
@@ -682,7 +676,7 @@ descendant be singular. This keeps the relationship clear between descendant lev
 ```
 
 <a name="is-stateOfComponent"></a>
-#### componentName.is-stateOfComponent
+### componentName.is-stateOfComponent
 
 Use `is-stateName` for state-based modifications of components. The state name
 must be Camel case. **Never style these classes directly; they should always be
@@ -718,14 +712,12 @@ and utilities can be used alongside component classes.
 Utility classes should be used sparingly, lean towards component level styling
 to make for as reusable HTML patterns as possible.
 
-
 <a name="u-utilityName"></a>
-#### u-utilityName
+### u-utilityName
 
 Syntax: `u-<utilityName>`
 
 Utilities must use a camel case name, prefixed with a `u` namespace.
-
 
 <a name="variables-and-mixins"></a>
 ## Variables and Mixins
@@ -733,7 +725,7 @@ Utilities must use a camel case name, prefixed with a `u` namespace.
 Variables and Mixins should follow similar naming conventions.
 
 <a name="variables"></a>
-####Variables
+### Variables
 
 Syntax: `[<componentName>[--modifierName][-descendentName]-]<propertyName>-<variablename>[--<modifierName>]`
 
@@ -757,14 +749,14 @@ $lineHeight--small:   1.2;
 > **Don't:**
 > Name your variables after the color value
 
-```css
+```scss
 $bigcommerceBlue:     #00abc9;
 $color-blue:          #00ffee;
 $color-lightBlue:     #eeff00;
 ```
 
 <a name="component-variables"></a>
-####Component / Micro App level variables
+### Component / Micro App level variables
 
 Micro apps must base their local variables on the global variables primarily.
 You may add your own specific variables as required if no global variable is available.
@@ -781,7 +773,7 @@ our component naming conventions.
 
 > **Do:**
 
-```css
+```scss
 $componentName-fontSize:                                fontSize("small");
 $componentName-decendantName-backgroundColor:           #ccc;
 $componentName-decendantName-marginBottom:              fontSize("large");
@@ -804,7 +796,7 @@ $componentName-decendantName--active-backgroundColor:   #000;
 ```
 
 <a name="variable-maps"></a>
-####Maps, maps are cool
+### Maps, maps are cool
 
 Variable maps with a simple getter mixin, can help simplify your variable names
 when calling them, and help better group variables together using their
@@ -838,7 +830,6 @@ $colors: (
     @return map-get(map-get($colors, $color), $tone);
 }
 ```
-
 
 ```scss
 // Usage
@@ -875,7 +866,7 @@ h3 {
 variables.**
 
 <a name="colors"></a>
-#### Colors
+### Colors
 
 Please only use the globally available colors from the Bigcommerce Library.
 Your Micro app or component shouldn't really have a need for a *new* color.
@@ -884,39 +875,38 @@ This creates consistency and sanity.
 Avoid using the `darken(color, %)` and `lighten(color, %)` mixins for similar reasons.
 
 Use the color maps available to you:
-```css
+
+```scss
 .component {
     background-color: color("brand", "primary");
 }
 ```
 
 <a name="zindex"></a>
-#### z-index scale
+### z-index scale
 
 Please use the z-index scale defined in the Bigcommerce Library under global settings.
 
 `zIndex("lowest")` or `zIndex("high")` for example.
 
-
 <a name="fontweight"></a>
-#### Font Weight
+### Font Weight
 
 Bigcommerce apps share a strict set of font weights. Never declare a new font weight,
 only use the available font settings from the Bigcommerce Library. e.g.
 
-```css
+```scss
 fontWeight("light");
 fontWeight("semibold");
 ```
 
-
 <a name="lineheight"></a>
-#### Line Height
+### Line Height
 
 The Bigcommerce Library also provides a line height scale. This should be used for blocks
 of text. e.g.
 
-```css
+```scss
 lineHeight("smallest");
 lineHeight("large");
 ```
@@ -924,7 +914,7 @@ lineHeight("large");
 Alternatively, when using line height to vertically centre a single line of text,
 be sure to set the line height to the height of the container - 1.
 
-```CSS
+```scss
 .button {
   height: remCalc(50px);
   line-height: remCalc(49px);
@@ -932,12 +922,12 @@ be sure to set the line height to the height of the container - 1.
 ```
 
 <a name="animations"></a>
-#### Animations
+### Animations
 
 Animation delays, durations and easing should be taken from the global framework
 
 <a name="mixins"></a>
-#### Mixins
+### Mixins
 
 Mixins follow regular camel case naming conventions and do not require namespacing. If you are creating a mixin for a utility, it will need to match the utility name (including `u` namespacing).
 
@@ -978,7 +968,7 @@ supply in a Grunt or Gulp task. This keeps our SCSS code base lean and future pr
 <a name="javascript"></a>
 ## JavaScript
 
-syntax: `js-<targetName>`
+Syntax: `js-<targetName>`
 
 JavaScript-specific classes reduce the risk that changing the structure or theme
 of components will inadvertently affect any required JavaScript behaviour and
@@ -994,9 +984,10 @@ you should probably be adding the `js-` prefix. In practice this looks like this
 **Again, JavaScript-specific classes should not, under any circumstances, be styled.**
 
 <a name="folders"></a>
-##Folder Structure
+## Folder Structure
 
-####General principle
+### General principle
+
 The SASS folder structure we're proposing, will have two slight differences
 between the core framework and micro apps, however the bulk of the structure is
 identical between the two.
@@ -1004,7 +995,7 @@ identical between the two.
 The idea is to have the least amount of folders as possible, but as many as we
 need to define clear, structured patterns in your SASS.
 
-####Core Folder Structure
+### Core Folder Structure
 
 ```
 .
@@ -1015,7 +1006,6 @@ need to define clear, structured patterns in your SASS.
 |   └── components/
 |   └── utilities/
 ```
-
 
 **/settings:** Contains all of your SCSS variables for your framework. Within
 this folder is 1 primary file `_settings.scss`, which imports all other variable
@@ -1046,8 +1036,7 @@ is required. Every utility found within this folder will have both a class and a
 mixin. An example being, truncatedText. You can utilise it by applying the class
 `.u-truncatedText` or by applying a mixin, `@include truncatedText;`.
 
-
-####Micro App Folder Structure
+### Micro App Folder Structure
 
 ```
 .
