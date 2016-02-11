@@ -2,8 +2,8 @@
 
 Bigcommerce uses [SASS](http://sass-lang.com/) for style generation.
 
-Bigcommerce's naming conventions are heavily influenced by the SUIT CSS framework
-and align closely to [Medium](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)'s
+Bigcommerce’s naming conventions are heavily influenced by the SUIT CSS framework
+and align closely to [Medium](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)’s
 thoughts on CSS. Which is to say, it relies on _structured class names_ and
 _meaningful hyphens_ (i.e., not using hyphens merely to separate words). This
 helps to work around the current limits of applying CSS to the DOM (i.e., the
@@ -53,11 +53,11 @@ classes.
 <a name="principles"></a>
 ## General Principles
 Strictly adhere to the agreed-upon style guide listed below. The general
-principle is to develop DRY (Don't Repeat Yourself) SCSS, built around reusable
+principle is to develop DRY (Don’t Repeat Yourself) SCSS, built around reusable
 components and patterns.
 
 * All code should look like a single person has typed it.
-* Don't try to prematurely optimize your code; keep it readable and understandable.
+* Don’t try to prematurely optimize your code; keep it readable and understandable.
 * When building a component, always start by looking at existing patterns.
 * Break down complex components until they are made up of simple components.
 * Save your complex components as patterns so they can be easily reused.
@@ -67,7 +67,7 @@ components and patterns.
 <a name="specificity"></a>
 ## Specificity
 
-On large code bases, it's preferable and a tonne more maintainable if the
+On large code bases, it’s preferable and a tonne more maintainable if the
 specificity of selectors are all as equal and as low as humanly possible.
 
 
@@ -81,8 +81,8 @@ specificity of selectors are all as equal and as low as humanly possible.
 ```
 
 
-> **Don't:**
-> Use ID's for styling. There is literally no point in using them.
+> **Don’t:**
+> Use ID’s for styling. There is literally no point in using them.
 
 ```css
 #component {
@@ -100,7 +100,7 @@ h1 {
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 > Reference or style descendent elements in your class selectors.
 
 ```css
@@ -110,7 +110,7 @@ h1 {
 ```
 
 
-> **Don't:**
+> **Don’t:**
 > Use overqualified selectors in your CSS. Do not prepend a class or ID with an element.
 
 ```css
@@ -156,7 +156,7 @@ The following are some high level page formatting style rules.
 <a name="indentation"></a>
 ####Indentation
 
-* Don't mix spaces with tabs for indentation.
+* Don’t mix spaces with tabs for indentation.
 * Use a soft-tab of 4 spaces.
 * Use white-space to improve readability.
 * Feel free to use indentation to show hierarchy.
@@ -243,7 +243,7 @@ The following are some high level page formatting style rules.
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 
 ```css
 .content, .content-edit{
@@ -271,7 +271,7 @@ input[type="checkbox"] {
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 
 ```css
 input[type=checkbox] {
@@ -285,7 +285,7 @@ input[type=checkbox] {
 * Use lower-case and shorthand hex values
 * Use unit-less line-height values
 * Where allowed, avoid specifying units for zero values
-* Never specify the height property unless it's specifically needed (`min-height` is cool)
+* Never specify the height property unless it’s specifically needed (`min-height` is cool)
 * Never use `!important` (Utility classes are an exception but still should be
 avoided)
 * Try to only style the property you are explicitly concerned with to reduce
@@ -308,7 +308,7 @@ over zealously resetting something you might want to inherit
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 
 ```css
 .component {
@@ -326,7 +326,7 @@ over zealously resetting something you might want to inherit
 <a name="declaration-order"></a>
 ####Declaration order
 There are a millions opinions and thoughts on logical ordering and grouping.
-Don't force someone to learn your opinion, ordering doesn't matter, consistency
+Don’t force someone to learn your opinion, ordering doesn’t matter, consistency
 does. Just use the alphabet, _everyone_ knows it.
 * @extend
 * @include
@@ -348,7 +348,7 @@ does. Just use the alphabet, _everyone_ knows it.
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 
 ```css
 .component {
@@ -391,7 +391,7 @@ _**elements**_ with a double colon.
 }
 ```
 
-> **Don't**
+> **Don’t**
 
 ```css
 .component:after {
@@ -414,12 +414,12 @@ _**elements**_ with a double colon.
 * Use `%` units only if necessary, where `rem` will not suffice:
     * Positioning (`top`, `right`, `bottom`, `left`)
     * Dimensions (`width`, `height`)
-* Line-height should be kept unit-less. If you find you're using a line-height
+* Line-height should be kept unit-less. If you find you’re using a line-height
 with a set unit type, try to think of alternative ways to achieve the same outcome.
-If it's a unique case which requires a specific `px` or `rem` unit, outline the
+If it’s a unique case which requires a specific `px` or `rem` unit, outline the
 reasoning with comments so that others are aware of its purpose.
 
-> **Don't:**
+> **Don’t:**
 
 * Avoid all use of magic numbers. Re-think the problem. (`margin-top: 37px;`)
 
@@ -434,7 +434,7 @@ Nesting is handy, _sometimes_, but will quickly conflict with our
 As we follow conventions and thoughts from popular and widely accepted
 methodologies such as BEM, SMACSS and SUIT, the use of the Suffix can help immensely though.
 
-* Just because you can, doesn't mean you should.
+* Just because you can, doesn’t mean you should.
 * [Parent Selector Suffixes](http://thesassway.com/news/sass-3-3-released#parent-selector-suffixes)
 are neat, but not very searchable
 * Watch your output, be mindful of [Specificty](#specificity) and
@@ -472,7 +472,7 @@ At its worst, this produces:
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 
 ```css
 .bc-tab-panel {
@@ -502,7 +502,7 @@ At its worst, this produces:
 }
 ```
 
-At it's worst, this produces:
+At it’s worst, this produces:
 ```css
 .bc-tab-panel .panel-body .panel-side-bar .panel-side-item .panel-side-item-label.small-font {
     font-size: 13px;
@@ -516,7 +516,7 @@ At it's worst, this produces:
 gzip should help with that.
 * Excessive use of `@extend` can create large selector blocks (not helpful in web inspector)
 and hoisting of your selector can cause override and inheritance issues.
-* We advise to `@include` over `@extend` generally, but use common sense. In situations where it's better to  `@extend` it's safer to do so on a placeholder selector.
+* We advise to `@include` over `@extend` generally, but use common sense. In situations where it’s better to  `@extend` it’s safer to do so on a placeholder selector.
 
 > **Do:**
 > Make use of placeholder selectors to separate repeated local styles
@@ -572,7 +572,7 @@ The primary architectural division is between components and utilities:
 <a name="componentName"></a>
 #### ComponentName
 
-The component's name must be written in camel case. Use class names that are as
+The component’s name must be written in camel case. Use class names that are as
 short as possible but as long as necessary.
 
 * Example: `.nav` not `.navigation`
@@ -614,7 +614,7 @@ in the HTML _in addition_ to the base component class.
 #### componentName-descendantName
 
 A component descendant is a class that is attached to a descendant node of a
-component. It's responsible for applying presentation directly to the descendant
+component. It’s responsible for applying presentation directly to the descendant
 on behalf of a particular component. Descendant names must be written in camel case.
 
 ```html
@@ -630,13 +630,13 @@ on behalf of a particular component. Descendant names must be written in camel c
 ```
 
 You might notice that `tweet-avatar`, despite being a descendant of `tweet-header`
-does not have the class of `tweet-header-avatar`. Why? Because it doesn't necessarily
+does not have the class of `tweet-header-avatar`. Why? Because it doesn’t necessarily
 **have** to live there. It could be adjacent to `tweet-header` and function the same
 way. Therefore, you should **only** prepend a descendant with its parent if must
 live there. Strive to keep class names as short as possible, but as long as necessary.
 
-When building a component, you'll often run into the situation where you have a
-list, group or simply require a container for some descendants. In this case, it's
+When building a component, you’ll often run into the situation where you have a
+list, group or simply require a container for some descendants. In this case, it’s
 much better to follow a pattern of pluralising the container and having each
 descendant be singular. This keeps the relationship clear between descendant levels.
 
@@ -660,7 +660,7 @@ descendant be singular. This keeps the relationship clear between descendant lev
 </ul>
 ```
 
-> **Don't:**
+> **Don’t:**
 > Avoid verbose descendant names
 
 ```html
@@ -754,7 +754,7 @@ $fontSize--large:     2rem;
 $lineHeight--small:   1.2;
 ```
 
-> **Don't:**
+> **Don’t:**
 > Name your variables after the color value
 
 ```css
@@ -769,9 +769,9 @@ $color-lightBlue:     #eeff00;
 Micro apps must base their local variables on the global variables primarily.
 You may add your own specific variables as required if no global variable is available.
 
-For portability, your component should declare it's own set of variables inside
-it's own settings partial, inside the settings folder. Even if at the time, your
-component only uses globally available variables from Bigcommerce's Library,
+For portability, your component should declare its own set of variables inside
+its own settings partial, inside the settings folder. Even if at the time, your
+component only uses globally available variables from Bigcommerce’s Library,
 you should reassign the global variable to a local one.
 If your component styles change from those global variables at all in the future,
 less of your SCSS will have to change, as you only change the local variable value.
@@ -878,7 +878,7 @@ variables.**
 #### Colors
 
 Please only use the globally available colors from the Bigcommerce Library.
-Your Micro app or component shouldn't really have a need for a *new* color.
+Your Micro app or component shouldn’t really have a need for a *new* color.
 This creates consistency and sanity.
 
 Avoid using the `darken(color, %)` and `lighten(color, %)` mixins for similar reasons.
@@ -958,7 +958,7 @@ supply in a Grunt or Gulp task. This keeps our SCSS code base lean and future pr
 }
 ```
 
-> **Don't:**
+> **Don’t:**
 > Add vendor prefixes at all.
 
 ```css
@@ -984,7 +984,7 @@ JavaScript-specific classes reduce the risk that changing the structure or theme
 of components will inadvertently affect any required JavaScript behaviour and
 complex functionality. It is not necessary to use them in every case, just
 think of them as a tool in your utility belt. If you are creating a class, which
-you don't intend to use for styling, but instead only as a selector in JavaScript,
+you don’t intend to use for styling, but instead only as a selector in JavaScript,
 you should probably be adding the `js-` prefix. In practice this looks like this:
 
 ```html
@@ -997,7 +997,7 @@ you should probably be adding the `js-` prefix. In practice this looks like this
 ##Folder Structure
 
 ####General principle
-The SASS folder structure we're proposing, will have two slight differences
+The SASS folder structure we’re proposing, will have two slight differences
 between the core framework and micro apps, however the bulk of the structure is
 identical between the two.
 
@@ -1036,9 +1036,9 @@ the /vendor folder should ever be modified.
 **/components:** Contains all of your components. This folder will make up the
 vast majority of your compiled CSS. All custom components simply live inside
 this folder, for example `/components/component/_component.scss`. It also contains
-the consumed version of your chosen /vendor framework's components, which will be
+the consumed version of your chosen /vendor framework’s components, which will be
 reworked to adhere to the Naming Conventions and Style Guide. They will live
-inside a subfolder of the framework's name, for example `/components/foundation/`.
+inside a subfolder of the framework’s name, for example `/components/foundation/`.
 
 **/utilities:** Contains all CSS snippets which can be applied to your HTML for
 quick prototyping, or a case by case basis where a unique, yet repeatable style
@@ -1062,25 +1062,25 @@ mixin. An example being, truncatedText. You can utilise it by applying the class
 ```
 
 There are only two minor differences in a micro app, when compared to the core
-framework. Firstly you'll notice that the /framework folder has been replaced by
+framework. Firstly you’ll notice that the /framework folder has been replaced by
 a /layouts folder, as well as the addition of the /shame folder.
 
-**/layouts:** Contains your micro app "layouts" and page specific styling.
+**/layouts:** Contains your micro app “layouts” and page specific styling.
 Essentially creating the wrapping sections and grids for your app, where the
-core framework's components will live inside. For example, a layout file could
-potentially be your micro app's navigation. It is important to note that the
+core framework’s components will live inside. For example, a layout file could
+potentially be your micro app’s navigation. It is important to note that the
 styling for individual navigation items and all other inner components styling
 do not live in the layout file. There purpose is purely for the containing
 elements that set up your app.
 
-**/shame:** This interestingly named folder has one goal: to remain empty. It's
+**/shame:** This interestingly named folder has one goal: to remain empty. Its
 purpose is the place for all of those hot fixes or quick hacks in throwing
-something together. Any code which you don't feel is "complete" can also live
+something together. Any code which you don’t feel is “complete” can also live
 here. It creates clear visibility on less than perfect code, especially when it
 comes to code reviews, and creates a trail for your dodgy code that if left
 somewhere in your component/layout code could be forgotten about and left.
 
 **A note on: /components & /utilities:** Within your micro app, these folders should
-only house your app's unique code. Any repeatable component or utility that could
+only house your app’s unique code. Any repeatable component or utility that could
 be re-used across other micro apps should be flagged and a PR opened for adding
 it into the core framework.
