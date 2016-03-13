@@ -36,7 +36,7 @@ classes.
   * [u-utilityName](#u-utilityName)
 * [Variables and Mixins](#variables-and-mixins)
   * [Variables](#variables)
-  * [Componenet / Micro app variables](#component-variables)
+  * [Component / Micro app variables](#component-variables)
   * [Maps](#variable-maps)
   * [colors](#colors)
   * [z-index](#zindex)
