@@ -182,7 +182,7 @@ The following are some high level page formatting style rules.
 * Separate your code into logical sections using standard comment blocks.
 * Leave one clear line under your section comments.
 * Leave two clear lines above comment blocks.
-* Annotate your code inside a comment block, leaving a reference # next ot the line.
+* Annotate your code inside a comment block, leaving a reference # next to the line.
 
 > **Do:**
 > Comment your code
