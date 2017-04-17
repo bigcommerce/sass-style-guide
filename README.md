@@ -154,7 +154,7 @@ The following are some high level page formatting style rules.
 * Leave one clear line at the bottom of your file.
 
 <a name="indentation"></a>
-####Indentation
+#### Indentation
 
 * Don't mix spaces with tabs for indentation.
 * Use a soft-tab of 4 spaces.
@@ -178,7 +178,7 @@ The following are some high level page formatting style rules.
 ```
 
 <a name="commenting"></a>
-####Commenting
+#### Commenting
 * Separate your code into logical sections using standard comment blocks.
 * Leave one clear line under your section comments.
 * Leave two clear lines above comment blocks.
@@ -281,7 +281,7 @@ input[type=checkbox] {
 ```
 
 <a name="value-declaration"></a>
-####When declaring values
+#### When declaring values
 * Use lower-case and shorthand hex values
 * Use unit-less line-height values
 * Where allowed, avoid specifying units for zero values
@@ -324,7 +324,7 @@ over zealously resetting something you might want to inherit
 
 
 <a name="declaration-order"></a>
-####Declaration order
+#### Declaration order
 There are a millions opinions and thoughts on logical ordering and grouping.
 Don't force someone to learn your opinion, ordering doesn't matter, consistency
 does. Just use the alphabet, _everyone_ knows it.
@@ -366,7 +366,7 @@ does. Just use the alphabet, _everyone_ knows it.
 ```
 
 <a name="pseudo"></a>
-##Pseudo Elements and Classes
+## Pseudo Elements and Classes
 Pseudo elements and classes are very different things, as is the syntax used to
 declare them. Declare pseudo _**classes**_ with a single colon. Declare pseudo
 _**elements**_ with a double colon.
@@ -401,7 +401,7 @@ _**elements**_ with a double colon.
 
 
 <a name="units"></a>
-##Units
+## Units
 
 > **Do:**
 
@@ -426,7 +426,7 @@ reasoning with comments so that others are aware of its purpose.
 
 
 <a name="nesting"></a>
-##Nesting
+## Nesting
 
 Nesting is handy, _sometimes_, but will quickly conflict with our
 [Specificty](#specificity) and [Performance](#performance) guidelines.
@@ -733,7 +733,7 @@ Utilities must use a camel case name, prefixed with a `u` namespace.
 Variables and Mixins should follow similar naming conventions.
 
 <a name="variables"></a>
-####Variables
+#### Variables
 
 Syntax: `[<componentName>[--modifierName][-descendentName]-]<propertyName>-<variablename>[--<modifierName>]`
 
@@ -764,7 +764,7 @@ $color-lightBlue:     #eeff00;
 ```
 
 <a name="component-variables"></a>
-####Component / Micro App level variables
+#### Component / Micro App level variables
 
 Micro apps must base their local variables on the global variables primarily.
 You may add your own specific variables as required if no global variable is available.
@@ -804,7 +804,7 @@ $componentName-decendantName--active-backgroundColor:   #000;
 ```
 
 <a name="variable-maps"></a>
-####Maps, maps are cool
+#### Maps, maps are cool
 
 Variable maps with a simple getter mixin, can help simplify your variable names
 when calling them, and help better group variables together using their
@@ -994,9 +994,9 @@ you should probably be adding the `js-` prefix. In practice this looks like this
 **Again, JavaScript-specific classes should not, under any circumstances, be styled.**
 
 <a name="folders"></a>
-##Folder Structure
+## Folder Structure
 
-####General principle
+#### General principle
 The Sass folder structure we're proposing, will have two slight differences
 between the core framework and micro apps, however the bulk of the structure is
 identical between the two.
@@ -1004,7 +1004,7 @@ identical between the two.
 The idea is to have the least amount of folders as possible, but as many as we
 need to define clear, structured patterns in your Sass.
 
-####Core Folder Structure
+#### Core Folder Structure
 
 ```
 .
@@ -1047,7 +1047,7 @@ mixin. An example being, truncatedText. You can utilise it by applying the class
 `.u-truncatedText` or by applying a mixin, `@include truncatedText;`.
 
 
-####Micro App Folder Structure
+#### Micro App Folder Structure
 
 ```
 .
